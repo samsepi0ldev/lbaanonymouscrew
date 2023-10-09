@@ -1,70 +1,27 @@
-import { CardPerson } from '@/components/card-person';
-import { Facebook, Instagram, Youtube } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Facebook, Instagram, Wand2, Youtube } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className='min-h-screen w-full bg-zinc-950'>
-      <header className='peer-[]: flex h-28 w-full items-center justify-center bg-zinc-100/5'>
-        <Image src='' alt='Logo' />
-        <div className='prose uppercase prose-a:inline-block prose-a:w-24 prose-a:text-zinc-100 prose-a:no-underline'>
-          <Link href='/home'>Inicio</Link>
-          <Link href='/media'>Mídia</Link>
-          <Link href='/events'>Eventos</Link>
-          <Link href='/about'>Sobre</Link>
+    <main className='flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-zinc-800'>
+      <button className='flex h-10 w-72 items-center justify-center gap-x-2 border-2 border-zinc-950 bg-purple-500 text-sm font-semibold text-zinc-900 shadow-[4px_4px_0_transparent] shadow-zinc-950 transition-colors hover:bg-purple-600'>
+        <Instagram />
+        Instagram
+      </button>
+      <button className='flex h-10 w-72 items-center justify-center gap-x-2 border-2 border-zinc-950 bg-blue-500 text-sm font-semibold text-zinc-900 shadow-[4px_4px_0_transparent] shadow-zinc-950 transition-colors hover:bg-blue-600'>
+        <Facebook />
+        Facebook
+      </button>
+      <button className='flex h-10 w-72 items-center justify-center gap-x-2 border-2 border-zinc-950 bg-red-500 text-sm font-semibold text-zinc-900 shadow-[4px_4px_0_transparent] shadow-zinc-950 transition-colors hover:bg-red-600'>
+        <Youtube />
+        YouTube
+      </button>
+
+      <button className='wand hover:after:animate-rainbow relative flex h-44 w-44 flex-col items-center justify-center overflow-hidden rounded-full p-2 text-zinc-100'>
+        <div className='z-10 flex h-full w-full flex-col items-center justify-center gap-4 rounded-full bg-zinc-900'>
+          <Wand2 />
+          Click aqui!
         </div>
-      </header>
-      <section className='flex h-96 max-h-96 flex-col items-center justify-center px-10 text-sm text-zinc-100 lg:px-96'>
-        <p className='whitespace-pre-wrap text-center text-lg'>
-          ESTABELECIDA EM 2011,
-          <br />
-          Somos um grupo de irmãos em busca de explorar destemidamente as
-          profundezas de nossa imaginação e propósito artístico.
-          Com mais de 30 membros no total, incluindo indivíduos especializados
-          em outras habilidades além da dança, gostamos de nos considerar um{' '}
-          {`'Artista'`}
-          irmandade”, e são conhecidos por nosso intrincado estilo de
-          coreografia e narrativa criativa através da dança e das novas mídias.
-          Nosso objetivo comum é cultivar “Kin a todo custo”, apoiar uns aos
-          outros para alcançar nosso maior potencial coletivo,
-          e impactar positivamente o mundo com nosso tempo e habilidades da
-          maneira mais divertida possível.
-          Somos o movimento nas sombras.
-          Repeite a todos. Não tema a ninguém.
-        </p>
-      </section>
-      <section className='flex flex-col items-center justify-center'>
-        <div className='mb-10 flex w-full max-w-sm flex-col gap-4 prose-a:text-white'>
-          <a
-            href='#'
-            className='hover: flex items-center gap-4 rounded border-2 border-zinc-800 bg-zinc-900 px-4 py-2 hover:bg-zinc-800 transition-colors'
-          >
-            <Youtube />
-            YouTube
-          </a>
-          <a
-            href='#'
-            className='flex items-center gap-4 rounded border-2 border-zinc-800 bg-zinc-900 px-4 py-2 hover:bg-zinc-800 transition-colors'
-          >
-            <Facebook />
-            Facebook
-          </a>
-          <a
-            href='#'
-            className='flex items-center gap-4 rounded border-2 border-zinc-800 bg-zinc-900 px-4 py-2 hover:bg-zinc-800 transition-colors'
-          >
-            <Instagram />
-            Instagram
-          </a>
-        </div>
-        <div className='flex items-center w-screen overflow-hidden overflow-x-auto'>
-          <CardPerson />
-          <CardPerson />
-          <CardPerson />
-          <CardPerson />
-        </div>
-      </section>
+      </button>
     </main>
   );
 }
